@@ -16,6 +16,7 @@
     {% for todo in allTodo %}
     <h2>{{todo.title}}</h2>
     <p>{{todo.desc}}</p>
+    <a href="/delete/{{todo.sno}}">Delete</a>
     {% endfor %}
   </body>
 </html>
