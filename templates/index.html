@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do</title>
+  </head>
+  <body>
+    <h1>This is a Todo List</h1>
+
+    <form method="POST" action="/">
+      <input name="title" /><input name="desc" /><button>Submit</button>
+    </form>
+
+    {% for todo in allTodo %}
+    <h2>{{todo.title}}</h2>
+    <p>{{todo.desc}}</p>
+    {% endfor %}
+  </body>
+</html>
