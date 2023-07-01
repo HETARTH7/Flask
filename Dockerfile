@@ -1,20 +1,23 @@
-# Use the official Python image as the base image
-FROM python:3.9-slim-buster
+# Set base image (host OS)
+FROM python:alpine3.8
+
+# Copy the content of the project directory to the working directory
+COPY . /app
 
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy the requirements file to the working directory
-COPY requirements.txt .
+# Install any dependencies
+RUN pip install -r requirements.txt
 
-# Install the dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# Specify the Flask environment port
+ENV PORT 5000
 
-# Copy the application code to the working directory
-COPY . .
-
-# Expose the Flask development server port
+# By default, listen on port 5000
 EXPOSE 5000
 
-# Run the Flask application
-CMD ["flask", "run", "--host=0.0.0.0"]
+# Set the directive to specify the executable that will run when the container is initiated
+ENTRYPOINT [ "python" ]
+
+# Specify the command to run on container start
+CMD [ "app.py" ]
