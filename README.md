@@ -28,3 +28,5 @@ PUT Request to update user by id
 ![image](https://github.com/HETARTH7/Flask/assets/89123479/97d7abde-40ac-4ea9-86b0-861af2055f1c)
 
 DELETE Request to delete user by id
+
+![image](https://github.com/HETARTH7/Flask/assets/89123479/d0108df6-36e3-4f12-bbd8-930556f001da)
